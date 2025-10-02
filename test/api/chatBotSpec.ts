@@ -103,10 +103,10 @@ describe('/chatbot', () => {
       if (bot == null) {
         throw new Error('Bot not initializeChatbotd')
       }
-      const { token } = await login({
-        email: 'bjoern.kimminich@gmail.com',
-        password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
-      })
+const { token } = await login({
+  email: process.env.USER_EMAIL,
+  password: process.env.USER_PASSWORD
+})
 
       bot.addUser('1337', 'bkimminich')
       const testCommand = trainingData.data[0].utterances[0]
